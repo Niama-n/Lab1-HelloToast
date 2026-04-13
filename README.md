@@ -69,7 +69,7 @@ HelloToast/
 ## Installation
 
 ```bash
-# Cloner le dépôt
+# Cloner le dépôt https://github.com/Niama-n/Lab1-HelloToast.git
 git clone 
 
 # Ouvrir dans Android Studio
