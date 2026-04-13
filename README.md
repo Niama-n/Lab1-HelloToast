@@ -1,1 +1,84 @@
 # Lab1-HelloToast
+
+
+## Présentation
+
+**HelloToast** est une application Android native développée dans le cadre d'un lab de développement mobile. Elle illustre les mécanismes fondamentaux d'une Activity Android : liaison entre le layout XML et la logique Java, gestion des interactions utilisateur, et mise à jour dynamique de l'interface.
+
+L'application propose deux fonctionnalités :
+
+- Afficher un **Toast** — un message temporaire qui apparaît en bas de l'écran
+- **Incrémenter un compteur** — la valeur se met à jour en temps réel à chaque appui
+
+---
+
+
+## Structure du projet
+
+```
+HelloToast/ 
+├── app/src/main/
+│   ├── java/com/example/hellotoast/
+│   │   └── MainActivity.java           ← logique de l'application
+│   └── res/layout/
+│       └── activity_main.xml           ← interface utilisateur
+└── README.md
+```
+
+---
+
+## Référence des fichiers
+
+### `MainActivity.java`
+
+| Élément | Description |
+|---|---|
+| `private int count` | Variable d'état — stocke la valeur du compteur |
+| `private TextView textCount` | Référence Java vers le composant d'affichage |
+| `onCreate()` | Point d'entrée appelé automatiquement au démarrage |
+| `setContentView(R.layout.activity_main)` | Lie ce fichier Java au layout XML |
+| `findViewById(R.id.xxx)` | Récupère un composant de l'écran par son identifiant |
+| `setOnClickListener(v -> { ... })` | Installe un écouteur de clic sur un bouton |
+| `Toast.makeText(this, "...", LENGTH_SHORT).show()` | Affiche un message temporaire (2 secondes) |
+| `textCount.setText(String.valueOf(count))` | Met à jour le texte affiché dynamiquement |
+
+### `activity_main.xml`
+
+| Composant | `android:id` | Rôle |
+|---|---|---|
+| `LinearLayout` | — | Conteneur vertical centré, fond `#1A1A1A` |
+| `TextView` | `text_count` | Affiche la valeur du compteur — mis à jour par Java |
+| `Button` | `button_toast` | Déclenche l'affichage du message Toast |
+| `Button` | `button_count` | Déclenche l'incrémentation du compteur |
+
+---
+
+## Concepts utilisés
+
+| Concept | Implémentation |
+|---|---|
+| Liaison XML ↔ Java | `setContentView()` + `findViewById()` |
+| Événements utilisateur | `setOnClickListener()` avec lambda `v -> {}` |
+| Mise à jour de l'interface | `setText()` appelé à chaque clic |
+| Feedback non intrusif | `Toast.makeText().show()` |
+| État entre les interactions | Variable `count` maintenue dans la classe |
+
+
+---
+
+## Installation
+
+```bash
+# Cloner le dépôt
+git clone 
+
+# Ouvrir dans Android Studio
+# File → Open → sélectionner le dossier HelloToast
+
+# Lancer l'application
+# Run → Run 'app'   ou   Shift + F10
+```
+
+---
+
+## Réalisé par   NAFTAOUI NIAMA
